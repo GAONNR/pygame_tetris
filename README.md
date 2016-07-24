@@ -6,3 +6,5 @@ This repository is for 2016 KAIST YOUTH CAMP.
 * Make screen
 * Fill background
 * Display image
+* limit FPS
+* move image
