@@ -2,9 +2,10 @@
 
 This repository is for 2016 KAIST YOUTH CAMP.
 
-## Basic Step
+## Basic2 Step
 * Make screen
 * Fill background
 * Display image
-* limit FPS
-* move image
+* Limit FPS
+* Move image
+* Make bird class
