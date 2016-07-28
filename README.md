@@ -2,10 +2,9 @@
 
 This repository is for 2016 KAIST YOUTH CAMP.
 
-## Basic2 Step
-* Make screen
-* Fill background
-* Display image
-* Limit FPS
-* Move image
-* Make bird class
+## Tetris
+* Block class
+* Gravity - fall down
+* Random choosing
+* Rotating
+* Line clearing
