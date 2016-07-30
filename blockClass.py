@@ -129,6 +129,9 @@ class Block:
         self.STATE += 1
         self.STATE %= 4
 
+    def getY(self):
+        return self.location[1]
+
 
 class Screen:
     def __init__(self, X, Y):
@@ -152,6 +155,23 @@ class Screen:
                 x = j * BLOCK_WIDTH
 
                 screen.blit(images[self.arr[i][j]], (x, y))
+
+    def lineClear(self, lineIdx):
+        if lineIdx >= self.HEIGHT:
+            return
+        for X in range(self.WIDTH):
+            if self.arr[lineIdx][X] < 0:
+                return
+
+        tempArr = [[-1 for col in range(self.WIDTH)] for row in range(self.HEIGHT)]
+        for i in range(lineIdx + 1, self.HEIGHT):
+            for j in range(self.WIDTH):
+                tempArr[i][j] = self.arr[i][j]
+        for i in range(lineIdx):
+            for j in range(self.WIDTH):
+                tempArr[i + 1][j] = self.arr[i][j]
+
+        self.arr = tempArr
 
     def getWIDTH(self):
         return self.WIDTH

@@ -82,6 +82,10 @@ while not LOSE:
     gameWindow.fill(BLACK)
 
     if currentBlock.move(screenArr, BLOCK_WIDTH, GRAVITY):
+        currentY = currentBlock.getY()
+        for line in range(4):
+            screenArr.lineClear(currentY + 3 - line)
+
         randomColor = random.randrange(4)
         currentBlock = Block(randomColor, random.choice(shapes), FIRSTLOCATION)
 
