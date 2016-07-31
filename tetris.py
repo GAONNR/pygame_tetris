@@ -81,16 +81,13 @@ while not LOSE:
 
     gameWindow.fill(BLACK)
 
-    if currentBlock.move(screenArr, BLOCK_WIDTH, GRAVITY):
-        currentY = currentBlock.getY()
-        for line in range(4):
-            screenArr.lineClear(currentY + 3 - line)
+    ### move currentBlock. it it can't move anymore, make new block.
+    ### also check line clearing.
+    #############################
 
-        randomColor = random.randrange(4)
-        currentBlock = Block(randomColor, random.choice(shapes), FIRSTLOCATION)
+    ###       Write Here      ###
 
-        if currentBlock.move(screenArr, BLOCK_WIDTH, GRAVITY):
-            LOSE = True
+    #############################
 
     screenArr.show(gameWindow, BLOCK_WIDTH, colors)
     background.blit(gameWindow, (0, 60))

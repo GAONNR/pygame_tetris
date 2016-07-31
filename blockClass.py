@@ -28,55 +28,32 @@ class Block:
         dx, dy = DIRECTION
 
         ### remove the block in screenArr
-        for i in range(4):
-            if (y + i) >= screenArr.getHEIGHT():
-                break
-            if (y + i) < 0:
-                continue
-            for j in range(4):
-                if (x + j) < 0 or (x + j) >= screenArr.getWIDTH():
-                    continue
-                if self.blockArr[i][j] > 0:
-                    screenArr.write(x + j, y + i, -1)
+        #############################
+
+        ###       Write Here      ###
+
+        #############################
 
         ### check if block is fit for new location. if it doesn't fit, self.static == True
-        for i in range(4):
-            if (y + i + dy) < 0:
-                continue
-            for j in range(4):
-                if (y + i + dy) >= screenArr.getHEIGHT() or (x + j + dx) >= screenArr.getWIDTH() or (x + j + dx) < 0:
-                    if self.blockArr[i][j] == 0:
-                        continue
-                    else:
-                        self.static = True
-                        break
+        #############################
 
-                if screenArr.getXY(x + j + dx, y + i + dy) >= 0 and self.blockArr[i][j] > 0:
-                    self.static = True
-                    break
+        ###       Write Here      ###
 
-            if self.static:
-                break
+        #############################
 
         ### if block fits for new location, update location
-        if not self.static:
-            x += dx
-            y += dy
-            self.location = (x, y)
-            print 'loc: ' + str(self.location)
+        #############################
+
+        ###       Write Here      ###
+
+        #############################
 
         ### write new location
-        for i in range(4):
-            if (y + i) < 0:
-                continue
-            if (y + i) >= screenArr.getHEIGHT():
-                break
-            for j in range(4):
+        #############################
 
-                if (x + j) < 0 or (x + j) >= screenArr.getWIDTH():
-                    continue
-                if self.blockArr[i][j] > 0:
-                    screenArr.write(x + j, y + i, self.color)
+        ###       Write Here      ###
+
+        #############################
 
         ### prevent block stopping when there's no place to move in X direction
         if DIRECTION != (0, 1):
@@ -98,32 +75,26 @@ class Block:
 
         x, y = self.location
 
-        for i in range(4):
-            if (y + i) < 0 or (y + i) >= screenArr.getHEIGHT():
-                continue
-            for j in range(4):
-                if (x + j) < 0 or (x + j) >= screenArr.getWIDTH():
-                    continue
-                if self.blockArr[i][j] > 0:
-                    screenArr.write(x + j, y + i, -1)
+        ### remove the block in screenArr
+        #############################
 
-        for i in range(4):
-            if (y + i) < 0 or (y + i) >= screenArr.getHEIGHT():
-                continue
-            for j in range(4):
-                if (x + j) < 0 or (x + j) >= screenArr.getWIDTH():
-                    continue
-                if tempArr[i][j] > 0 and screenArr.getXY(x + j, y + i) >= 0:
-                    return
+        ###       Write Here      ###
 
-        for i in range(4):
-            if (y + i) < 0 or (y + i) >= screenArr.getHEIGHT():
-                continue
-            for j in range(4):
-                if (x + j) < 0 or (x + j) >= screenArr.getWIDTH():
-                    continue
-                if tempArr[i][j] > 0:
-                    screenArr.write(x + j, y + i, color)
+        #############################
+
+        ### check if block is fit for new shape(rotated). if it doesn't fit, return
+        #############################
+
+        ###       Write Here      ###
+
+        #############################
+
+        ### write new shape
+        #############################
+
+        ###       Write Here      ###
+
+        #############################
 
         self.blockArr = tempArr
         self.STATE += 1
