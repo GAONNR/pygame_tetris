@@ -172,6 +172,7 @@ class Screen:
                 tempArr[i + 1][j] = self.arr[i][j]
 
         self.arr = tempArr
+        self.lineClear(lineIdx)
 
     def getWIDTH(self):
         return self.WIDTH
